@@ -13,7 +13,7 @@ html {
   inline-size: 1200px;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif, 'Arial', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -50,7 +50,6 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 16px;
- 
   justify-content: flex-end;
 }
 
@@ -62,8 +61,8 @@ ol {
 }
 
 .result__video {
-  width: 711px;
-  height: 386px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -85,7 +84,7 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -93,7 +92,7 @@ ol {
 }
 
 .search-form__label-text {
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -119,26 +118,33 @@ ol {
   height: 27px;
   gap: 10px;
   background-color: transparent;
-  color: #FFFFFFB2;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
-  border-width: 1px 0px 1px 0px;
-  border-color: #FFFFFFB2;
-  cursor: pointer;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  border-right: none;
+  border-left: none;
+  cursor: text;
   appearance: none;
+  caret-color: transparent;
 }
 
 .search-form__textfield:focus-visible {
   outline: 1px solid #FFFFFF;
+  outline-offset: 2px;
+  border: none;
   border-radius: 0;
+  cursor: none;
+  caret-color: transparent;
 }
 
 .search-form__label {
   display: flex;
   flex-direction: row;
   gap: 5px;
+  cursor: pointer;
 }
 
 .search-form__checkbox-list {
@@ -151,13 +157,23 @@ ol {
   text-decoration: underline;
 }
 
+.search-form__label:hover {
+  text-decoration: underline;
+}
+
+.search-form__label:not(:first-child) {
+  text-decoration: none;
+}
+
 .search-form__label:focus {
-  border: none;
+  outline: none;
 }
 
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #FFFFFF;
+  outline-offset: 2px;
   border-radius: 0;
+  align-items: center;
 }
 
 .search-form__pseudo-checkbox {
@@ -165,7 +181,6 @@ ol {
   height: 19px;
   outline: 1px solid #fff;
   background-color: transparent;
-  cursor: pointer;
 }
 
 .search-form__pseudo-checkbox:active {
@@ -177,7 +192,7 @@ ol {
   border: 1px solid black;
 }
 
-.search-form__pseudo-checkbox:focus {
+.search-form__pseudo-checkbox:focus-visible {
   width: 19px;
   height: 19px;
   top: 3.5px;
@@ -185,15 +200,31 @@ ol {
   background-color: #fff;
 }
 
+input[type='checkbox']:checked + span {
+  width: 19px;
+  height: 19px;
+  top: 3.5px;
+  left: 2px;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
 .button {
-  width: 194px;
-  height: 34px;
+  width: 100%;
   background-color: transparent;
   border: 1px solid #FFFFFF;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #FFFFFF;
+  font-family: Fira Sans Condensed, 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.6px;
+  top: 20px;
+  left: 517px;
+  gap: 10px;
 }
 
 .button:hover {
@@ -208,15 +239,12 @@ ol {
 .button:focus-visible {
   outline: 1px solid #FFFFFF;
   border-radius: 0;
+  outline-offset: 1px;
 }
 
 .search-form__submit-button {
-  color: #FFFFFF;
-  font-family: Fira Sans Condensed;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 21.6px;
   align-self: flex-end;
+  height: 34px;
 }
 
 .search-form__submit-button:active {
@@ -224,7 +252,7 @@ ol {
 }
 
 .title {
-  font-family: Oswald;
+  font-family: Oswald, 'Arial', sans-serif;
   font-size: 75px;
   font-weight: 700;
   line-height: 70.5px;
@@ -274,7 +302,7 @@ ol {
 }
 
 .content__card-link:hover {
-  background-color: transparent;
+  background-color: #545050;
 }
 
 .content__card-link_current {
@@ -297,15 +325,16 @@ ol {
 .content__video-card-title {
   color: #fff;
   text-transform: uppercase;
-  font-family: Oswald;
+  font-family: Oswald, 'Arial', sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
 }
 
 .content__video-card-description {
+  width: 200px;
   color: #fff;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 16.2px;
@@ -318,12 +347,5 @@ ol {
 }
 
 .more-button {
-  width: 100%;
-  border: 1px solid #FFFFFF;
-  color: #fff;
-  font-family: Fira Sans Condensed;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 21.6px;
-  text-align: center;
+  height: 34px;
 }
