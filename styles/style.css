@@ -116,6 +116,7 @@ ol {
 .search-form__textfield {
   width: 225px;
   height: 27px;
+  color: #FFFFFFB2;
   gap: 10px;
   background-color: transparent;
   font-family: Fira Sans Condensed, 'Arial', sans-serif;
@@ -153,15 +154,11 @@ ol {
   gap: 15px;
 }
 
-.search-form__label-text:hover {
-  text-decoration: underline;
-}
-
 .search-form__label:hover {
   text-decoration: underline;
 }
 
-.search-form__label:not(:first-child) {
+.search-form__label:has(.search-form__textfield):hover{
   text-decoration: none;
 }
 
@@ -186,8 +183,6 @@ ol {
 .search-form__pseudo-checkbox:active {
   width: 19px;
   height: 19px;
-  top: 3.5px;
-  left: 2px;
   background-color: #fff;
   border: 1px solid black;
 }
@@ -195,16 +190,12 @@ ol {
 .search-form__pseudo-checkbox:focus-visible {
   width: 19px;
   height: 19px;
-  top: 3.5px;
-  left: 2px;
   background-color: #fff;
 }
 
-input[type='checkbox']:checked + span {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox {
   width: 19px;
   height: 19px;
-  top: 3.5px;
-  left: 2px;
   background-color: #fff;
   border: 1px solid black;
 }
@@ -222,9 +213,6 @@ input[type='checkbox']:checked + span {
   font-size: 18px;
   font-weight: 700;
   line-height: 21.6px;
-  top: 20px;
-  left: 517px;
-  gap: 10px;
 }
 
 .button:hover {
@@ -244,7 +232,7 @@ input[type='checkbox']:checked + span {
 
 .search-form__submit-button {
   align-self: flex-end;
-  height: 34px;
+  min-height: 34px;
 }
 
 .search-form__submit-button:active {
@@ -301,10 +289,6 @@ input[type='checkbox']:checked + span {
   text-decoration: none;
 }
 
-.content__card-link:hover {
-  background-color: #545050;
-}
-
 .content__card-link_current {
   background-color: #545050;
 }
@@ -347,5 +331,5 @@ input[type='checkbox']:checked + span {
 }
 
 .more-button {
-  height: 34px;
+  min-height: 34px;
 }
